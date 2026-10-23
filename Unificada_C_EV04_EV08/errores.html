@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prototipo del estado de error del registro de productos de Express MiniMarket. Maqueta responsive de la Unificada C (EV04 + EV08).">
+  <title>Registro de errores · Express MiniMarket</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="app-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <div class="app-frame">
+    <header class="app-header">
+      <button
+        type="button"
+        class="menu-toggle"
+        data-menu-toggle
+        aria-controls="sidebar"
+        aria-expanded="false"
+        aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+
+      <div class="brand">
+        <img src="assets/logo.png" alt="Logo de Express MiniMarket">
+      </div>
+
+      <p class="app-title">Tu tienda</p>
+    </header>
+
+    <nav class="sidebar" id="sidebar" aria-label="Principal">
+      <div class="sidebar__nav">
+        <span class="nav-link" aria-disabled="true" title="Módulo no incluido en esta maqueta">Resumen</span>
+        <a class="nav-link" href="productos.html" aria-current="page">Productos</a>
+        <span class="nav-link" aria-disabled="true" title="Módulo no incluido en esta maqueta">Ventas</span>
+        <span class="nav-link" aria-disabled="true" title="Módulo no incluido en esta maqueta">Usuarios</span>
+      </div>
+    </nav>
+
+    <main class="main" id="contenido">
+      <div class="content">
+        <h1 class="page-title">Registro de Producto</h1>
+        <p class="page-subtitle">Completa los campos para registrar tu producto</p>
+
+        <div class="error-banner" role="alert">
+          Error: No puedes dejar vacíos los campos requeridos.
+        </div>
+
+        <form class="product-form" action="productos.html" method="get" novalidate>
+          <div class="form-row">
+            <div class="form-column">
+              <div class="field">
+                <label for="categoria">Categoría</label>
+                <select
+                  id="categoria"
+                  name="categoria"
+                  class="is-invalid"
+                  aria-invalid="true"
+                  aria-describedby="error-categoria"
+                  required
+                  aria-required="true">
+                  <option value="" selected disabled>Seleccione una categoría</option>
+                  <option value="abarrotes">Abarrotes</option>
+                  <option value="bebidas">Bebidas</option>
+                  <option value="lacteos">Lácteos</option>
+                  <option value="aseo">Aseo</option>
+                  <option value="panaderia">Panadería</option>
+                  <option value="otros">Otros</option>
+                </select>
+                <span class="field-error" id="error-categoria" role="alert">Categoría no ingresada.</span>
+              </div>
+
+              <div class="field">
+                <label for="precio">Precio de venta (COP)</label>
+                <input
+                  id="precio"
+                  name="precio"
+                  type="number"
+                  min="1"
+                  step="0.01"
+                  inputmode="decimal"
+                  required>
+              </div>
+
+              <div class="field">
+                <label for="stock">Stock</label>
+                <input
+                  id="stock"
+                  name="stock"
+                  type="number"
+                  min="0"
+                  step="1"
+                  inputmode="numeric"
+                  required>
+              </div>
+            </div>
+
+            <div class="form-divider" aria-hidden="true"></div>
+
+            <div class="form-column">
+              <div class="field">
+                <label for="nombre">Nombre de producto</label>
+                <input
+                  id="nombre"
+                  name="nombre"
+                  type="text"
+                  maxlength="80"
+                  autocomplete="off"
+                  required>
+              </div>
+
+              <div class="field">
+                <label for="codigo">Código de Producto</label>
+                <input
+                  id="codigo"
+                  name="codigo"
+                  type="text"
+                  maxlength="20"
+                  autocomplete="off"
+                  required>
+              </div>
+
+              <div class="form-actions">
+                <a class="btn" href="productos.html">Registrar producto</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <footer class="app-footer">
+        <span>Express MiniMarket · Prototipo de maquetación</span>
+        <span>Unificada C (EV04 + EV08)</span>
+      </footer>
+    </main>
+  </div>
+
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <script src="js/menu.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

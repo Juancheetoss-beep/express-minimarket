@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="celeste">#B7F7FB</color>
+    <color name="azul_navy">#04174E</color>
+    <color name="azul_navy_oscuro">#0B2A6B</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="cian">#4DD0E1</color>
+    <color name="verde">#067A32</color>
+    <color name="rojo">#D32F2F</color>
+    <color name="texto">#0B1B3A</color>
+    <color name="gris">#42526B</color>
+</resources>

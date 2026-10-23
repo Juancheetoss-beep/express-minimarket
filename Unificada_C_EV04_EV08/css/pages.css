@@ -1,0 +1,35 @@
+/* ============================================================
+   pages.css · ajustes específicos de cada pantalla
+   ============================================================ */
+
+/* ---------- Login ---------- */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login-form .field {
+  max-width: 100%;
+}
+
+.login-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+/* ---------- Registro de producto ---------- */
+.product-form {
+  margin-top: 4px;
+}
+
+.product-form .form-actions .btn {
+  min-width: 170px;
+}
+
+@media (max-width: 480px) {
+  .product-form .form-actions .btn {
+    width: 100%;
+  }
+}
