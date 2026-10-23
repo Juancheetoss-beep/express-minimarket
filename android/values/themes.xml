@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ExpressMiniMarket" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/azul_navy</item>
+        <item name="colorPrimaryVariant">@color/azul_navy_oscuro</item>
+        <item name="colorSecondary">@color/cian</item>
+        <item name="android:statusBarColor">@color/azul_navy</item>
+        <item name="android:navigationBarColor">@color/azul_navy</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:fontFamily">sans</item>
+    </style>
+</resources>

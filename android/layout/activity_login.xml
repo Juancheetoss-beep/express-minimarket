@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  activity_login.xml
+  Adaptación móvil de la pantalla de inicio de sesión de Express MiniMarket.
+  Usa dp/sp, textos en strings.xml, objetivo táctil de 48dp y contentDescription.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/celeste"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="640dp"
+        android:padding="@dimen/espacio_m">
+
+        <LinearLayout
+            android:id="@+id/tarjeta_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/espacio_m"
+            android:layout_marginEnd="@dimen/espacio_m"
+            android:background="@drawable/bg_card"
+            android:elevation="8dp"
+            android:orientation="vertical"
+            android:padding="@dimen/espacio_l"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_max="360dp">
+
+            <ImageView
+                android:id="@+id/logo_login"
+                android:layout_width="@dimen/logo_login"
+                android:layout_height="@dimen/logo_login"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/espacio_s"
+                android:contentDescription="@string/descripcion_logo"
+                android:src="@drawable/logo_express" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/espacio_m"
+                android:gravity="center"
+                android:text="@string/login_instruccion"
+                android:textColor="@color/azul_navy"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="@dimen/espacio_m"
+                android:background="@color/cian" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/correo"
+                app:boxStrokeColor="@color/azul_navy">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_correo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="emailAddress"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="@dimen/toque_minimo" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacio_m"
+                android:hint="@string/contrasena"
+                app:boxStrokeColor="@color/azul_navy">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_contrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="password"
+                    android:inputType="textPassword"
+                    android:minHeight="@dimen/toque_minimo" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/check_mostrar_contrasena"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toque_minimo"
+                android:layout_marginTop="@dimen/espacio_s"
+                android:buttonTint="@color/azul_navy"
+                android:text="@string/mostrar_contrasena"
+                android:textColor="@color/azul_navy"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="@dimen/espacio_m"
+                android:layout_marginBottom="@dimen/espacio_m"
+                android:background="@color/cian" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/boton_iniciar_sesion"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toque_minimo"
+                android:text="@string/iniciar_sesion"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/azul_navy"
+                app:cornerRadius="6dp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

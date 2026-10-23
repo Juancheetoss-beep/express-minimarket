@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  activity_registro_producto.xml
+  Adaptación móvil de la pantalla de registro de producto.
+  La barra lateral de la maqueta web se convierte en una navegación
+  horizontal desplazable, apropiada para pantallas táctiles.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:orientation="vertical">
+
+    <!-- Cabecera -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/alto_header"
+        android:background="@color/azul_navy"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/espacio_s">
+
+        <ImageView
+            android:id="@+id/logo_header"
+            android:layout_width="@dimen/logo_header"
+            android:layout_height="@dimen/logo_header"
+            android:contentDescription="@string/descripcion_logo"
+            android:src="@drawable/logo_express" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/tu_tienda"
+            android:textColor="@color/blanco"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- Navegación horizontal adaptable a móvil -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/celeste"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/espacio_s">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/toque_minimo"
+                android:gravity="center"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/resumen"
+                android:textColor="@color/azul_navy"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/toque_minimo"
+                android:layout_marginStart="@dimen/espacio_xs"
+                android:background="@drawable/bg_nav_active"
+                android:gravity="center"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/productos"
+                android:textColor="@color/verde"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/toque_minimo"
+                android:layout_marginStart="@dimen/espacio_xs"
+                android:gravity="center"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/ventas"
+                android:textColor="@color/azul_navy"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/toque_minimo"
+                android:layout_marginStart="@dimen/espacio_xs"
+                android:gravity="center"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/usuarios"
+                android:textColor="@color/azul_navy"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Formulario -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/espacio_l">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/registro_producto"
+                android:textColor="@color/azul_navy"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacio_xs"
+                android:layout_marginBottom="@dimen/espacio_m"
+                android:text="@string/subtitulo_registro"
+                android:textColor="@color/gris"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/categoria"
+                app:boxStrokeColor="@color/azul_navy">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/input_categoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:completionThreshold="1"
+                    android:entries="@array/categorias"
+                    android:inputType="none"
+                    android:minHeight="@dimen/toque_minimo" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacio_m"
+                android:hint="@string/precio_venta"
+                app:boxStrokeColor="@color/azul_navy">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_precio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:minHeight="@dimen/toque_minimo" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacio_m"
+                android:hint="@string/stock"
+                app:boxStrokeColor="@color/azul_navy">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_stock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:minHeight="@dimen/toque_minimo" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacio_m"
+                android:hint="@string/nombre_producto"
+                app:boxStrokeColor="@color/azul_navy">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:minHeight="@dimen/toque_minimo" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacio_m"
+                android:hint="@string/codigo_producto"
+                app:boxStrokeColor="@color/azul_navy">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_codigo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:minHeight="@dimen/toque_minimo" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/boton_registrar_producto"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toque_minimo"
+                android:layout_marginTop="@dimen/espacio_l"
+                android:text="@string/registrar_producto"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/azul_navy"
+                app:cornerRadius="6dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
